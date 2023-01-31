@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+:root {
+  --Strong_cyan: hsl(172, 67%, 45%);
+  --Very_dark_cyan: hsl(183, 100%, 15%);
+  --Dark_grayish_cyan: hsl(186, 14%, 43%);
+  --Grayish_cyan: hsl(184, 14%, 56%);
+  --Light_grayish_cyan: hsl(185, 41%, 84%);
+  --Very_light_grayish_cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+  background-color: var(--Light_grayish_cyan);
+}
+
+header {
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100%;
+  background-color: var(--White);
+  border-radius: 24px 24px 0 0;
+  padding: 2em 1em;
+}
+
+.top {
+  margin: 0 1em;
+}
+
+.heading {
+  color: var(--Dark_grayish_cyan);
+  padding: 5px 0;
+  font-size: 15px;
+}
+
+.inputBox {
+  height: 3em;
+  background-color: var(--Very_light_grayish_cyan);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--Very_dark_cyan);
+  background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section div:not(.grid-item) {
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 48.6% 48.6%;
+  gap: 1rem;
+}
+
+.grid-item {
+  font-family: "Space Mono", sans-serif;
+  background-color: var(--Very_dark_cyan);
+  color: var(--White);
+  height: 3em;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 3;
+  position: relative;
+}
+
+.grid-item label,
+.grid-item input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.grid-item input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.grid-item label {
+  cursor: pointer;
+  z-index: 90;
+}
+
+.grid-item:hover,
+.grid-item input[type="radio"]:checked + label,
+button[type="reset"]:hover {
+  border-radius: 5px;
+  color: var(--Very_dark_cyan);
+  background-color: var(--Strong_cyan);
+}
+
+.custom {
+  width: auto;
+  height: 2em;
+  border-radius: 5px;
+  padding-right: 10px;
+  background-color: var(--Very_light_grayish_cyan);
+}
+
+.bottom {
+  border-radius: 15px;
+  color: white;
+  background-color: var(--Very_dark_cyan);
+  padding: 2.2em;
+  margin: 0 1em;
+}
+
+.calc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc p {
+  color: var(--Grayish_cyan);
+  font-size: 14px;
+}
+
+.calc .heading {
+  color: var(--White) !important;
+}
+
+.display {
+  height: 100%;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--Strong_cyan);
+}
+
+button[type="reset"] {
+  width: 100%;
+  height: 3em;
+  color: var(--Very_dark_cyan);
+  background-color: var(--Grayish_cyan);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.active {
+  outline: 1px solid var(--Strong_cyan);
+}
+
+.error {
+  outline:  1px solid red;
+}
+
+/* .inputBox::before{
+  content: "Can't be Zero";
+  color: red;
+  font-size: 12px;
+
+} */
+
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    border-radius: 24px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button[type="reset"] {
+    width: 290px;
+    margin-top: auto;
+  }
+}
