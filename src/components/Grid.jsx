@@ -8,8 +8,9 @@ function Grid(props) {
         value={props.percent}
         id={props.percent}
         name="tip"
+        onClick={props.onClick}
       />
-      <label htmlFor={props.percent} >{props.percent}</label>
+      <label htmlFor={props.percent}>{props.percent}</label>
     </div>
   );
 }
