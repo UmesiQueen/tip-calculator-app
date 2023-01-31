@@ -5,7 +5,8 @@ function Input(props) {
     <input
       type="number"
       placeholder={props.placeholder}
-      className={props.class}
+      id={props.id}
+      className={props.className}
       name={props.name}
       onChange={props.onChange}
     />

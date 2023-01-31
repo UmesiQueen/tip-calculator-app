@@ -7,7 +7,7 @@ function Grid(props) {
         type="radio"
         value={props.percent}
         id={props.percent}
-        name="tip"
+        name={props.name}
         onClick={props.onClick}
       />
       <label htmlFor={props.percent}>{props.percent}</label>

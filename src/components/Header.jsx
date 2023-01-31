@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header() {
-  const imageUrl = "../images/logo.svg";
+  const imageUrl = "/images/logo.svg";
 
   return (
     <header>
