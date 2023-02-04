@@ -1,5 +1,5 @@
 import React from "react";
-import HeadText from "./HeadText";
+import Header from "./Header";
 
 function Calculate(props) {
   const amount = Math.round(props.calc * 100) / 100;
@@ -7,7 +7,7 @@ function Calculate(props) {
   return (
     <div className="calc">
       <span>
-        <HeadText text={props.text} />
+        <Header text={props.text} />
         <p>/ person</p>
       </span>
       <span className="display">

@@ -76,7 +76,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-section div:not(.grid-item) {
+section > div {
   margin-bottom: 20px;
 }
 
@@ -127,13 +127,6 @@ button[type="reset"]:hover {
   background-color: var(--Strong_cyan);
 }
 
-#custom {
-  width: auto;
-  height: 2em;
-  border-radius: 5px;
-  padding-right: 10px;
-  background-color: var(--Very_light_grayish_cyan);
-}
 
 .bottom {
   border-radius: 15px;
@@ -179,18 +172,6 @@ button[type="reset"] {
   outline: 1px solid var(--Strong_cyan);
 }
 
-.error {
-  outline: 1px solid red;
-}
-
-.error::before {
-  content: "Can't be Zero";
-  color: red;
-  font-size: 12px;
-  position: absolute;
-  right: 4em;
-}
-
 @media screen and (min-width: 768px) {
   body {
     height: 100vh;
@@ -210,6 +191,10 @@ button[type="reset"] {
     grid-template-columns: repeat(3, 30%);
   }
 
+  #custom{
+    font-size: 20px;
+  }
+  
   .bottom {
     display: flex;
     flex-direction: column;

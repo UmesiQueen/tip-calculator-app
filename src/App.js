@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import Header from "./Header";
-import InputBox from "./InputBox";
-import Input from "./Input";
-import HeadText from "./HeadText";
-import Grid from "./Grid";
-import Calculate from "./Calculate";
-import tipPercent from "../Percentage";
+import Logo from "./components/Logo";
+import Input from "./components/Input";
+import Header from "./components/Header";
+import Grid from "./components/Grid";
+import Calculate from "./components/Calculate";
+import tipPercent from "./Percentage";
+import "./App.css";
 
 function App() {
   const [data, setData] = useState({ tip: 0, bill: 0, people: 0 });
@@ -45,24 +45,20 @@ function App() {
     }
   }
 
-  // add class on active state
-  function addClass(e) {
-    e.target.parentElement.classList.add("active");
-  }
-
   return (
     <div>
-      <Header />
+      <Logo />
       <form className="container">
         <section className="top">
-          <InputBox
-            src="/images/icon-dollar.svg"
-            heading="Bill"
+          <Input
+            heading={<Header text="Bill" />}
+            img={<img src="/images/icon-dollar.svg" alt="logo" />}
+            placeholder="0"
             name="bill"
             onChange={getData}
           />
           <div>
-            <HeadText text="Select Tip %" />
+            <Header text="Select Tip %" />
             <div className="grid-container">
               {tipPercent.map((item) => (
                 <Grid
@@ -76,6 +72,7 @@ function App() {
                 />
               ))}
               <Input
+                style={{ borderRadius: "5px" }}
                 placeholder="Custom"
                 name="tip"
                 id="custom"
@@ -83,14 +80,17 @@ function App() {
                   getData(e);
                   unCheck();
                 }}
+    
               />
             </div>
           </div>
-          <InputBox
-            src="/images/icon-person.svg"
-            heading="Number of People"
+          <Input
+            heading={<Header text="Number of People" />}
+            img={<img src="/images/icon-person.svg" alt="logo" />}
+            placeholder="0"
             name="people"
             onChange={getData}
+           
           />
         </section>
         <section className="bottom">

@@ -1,13 +1,7 @@
 import React from "react";
 
-function Header() {
-  const imageUrl = "/images/logo.svg";
-
-  return (
-    <header>
-      <img src={imageUrl} alt="Logo" />
-    </header>
-  );
+function Heading(props) {
+  return <h3 className="heading">{props.text}</h3>;
 }
 
-export default Header;
+export default Heading;
